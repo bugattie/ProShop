@@ -1,7 +1,24 @@
-const express = require("express");
+import dotenv from "dotenv";
+import chalk from "chalk";
 
-const app = express();
+import connectDB from "./config/DB.js";
+import app from "./app.js";
 
-const PORT = 5000;
+dotenv.config();
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+connectDB();
+
+const port = process.env.PORT || 3000;
+
+const server = app.listen(port, () => {
+  console.log(chalk.ansi256(`Listening request on port ${port}`));
+});
+
+process.on("unhandledRejection", (err) => {
+  console.log(err.name, err.message);
+  console.log("Unhandled Rejection, Shutting down......");
+
+  server.close(() => {
+    process.exit(1);
+  });
+});
