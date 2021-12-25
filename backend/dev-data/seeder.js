@@ -6,8 +6,8 @@ import connectDB from "../config/DB.js";
 import User from "../models/userModel.js";
 import Product from "../models/productModel.js";
 import Order from "../models/orderModel.js";
-import users from "./users";
-import products from "./products";
+import users from "./users.js";
+import products from "./products.js";
 
 dotenv.config();
 

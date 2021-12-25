@@ -11,11 +11,11 @@ connectDB();
 const port = process.env.PORT || 3000;
 
 const server = app.listen(port, () => {
-  console.log(chalk.ansi256(`Listening request on port ${port}`));
+  console.log(`Listening request on port ${port}`);
 });
 
 process.on("unhandledRejection", (err) => {
-  console.log(err.name, err.message);
+  // console.log(err.name, err.message);
   console.log("Unhandled Rejection, Shutting down......");
 
   server.close(() => {

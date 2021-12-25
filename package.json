@@ -8,7 +8,9 @@
     "start": "node backend/server",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
-    "concurrently": "concurrently \"npm run server\" \"npm run client\""
+    "concurrently": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/dev-data/seeder --import",
+    "data:delete": "node backend/dev-data/seeder --delete"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-handler": "^1.2.0",
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0"
   },
