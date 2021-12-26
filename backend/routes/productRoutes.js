@@ -12,7 +12,7 @@ router.get(
 
     res.status(200).json({
       status: "success",
-      results: products,
+      data: products,
     });
   })
 );
@@ -29,7 +29,7 @@ router.get(
 
     res.status(200).json({
       status: "success",
-      results: product,
+      data: product,
     });
   })
 );
