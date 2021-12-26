@@ -12,8 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import Message from "../components/Message";
-import Loader from "../components/Loader";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const CartScreen = ({ match, location, history }) => {
   const dispatch = useDispatch();
@@ -28,7 +27,9 @@ const CartScreen = ({ match, location, history }) => {
     }
   }, [dispatch, productId, qty]);
 
-  const removeFromCartHandler = (productId) => {};
+  const removeFromCartHandler = (productId) => {
+    dispatch(removeFromCart(productId));
+  };
 
   const checkoutHandler = () => {
     history.push("/login?redirect=shipping");
