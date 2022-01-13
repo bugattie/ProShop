@@ -10,7 +10,7 @@ const signToken = (id) => {
   });
 };
 
-const createAndSendToken = (user, res) => {
+export const createAndSendToken = (user, res) => {
   const token = signToken(user._id);
 
   user.password = undefined;

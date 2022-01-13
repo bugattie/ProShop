@@ -5,7 +5,11 @@ import {
   productDetailReducer,
 } from "./reducers/productReducers.js";
 import { cartReducer } from "./reducers/cartReducers";
-import { userLoginReducer, userSignUpReducer } from "./reducers/userReducers";
+import {
+  userLoginReducer,
+  userSignUpReducer,
+  userDetailsReducer,
+} from "./reducers/userReducers";
 
 const rootReducer = combineReducers({
   productList: productListReducer,
@@ -13,6 +17,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userSignUpReducer,
+  userDetails: userDetailsReducer,
 });
 
 export default rootReducer;
