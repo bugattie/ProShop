@@ -128,7 +128,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `http://localhost:5000/api/user/${id}`,
+      `http://localhost:5000/api/user/profile`,
       user,
       config
     );
